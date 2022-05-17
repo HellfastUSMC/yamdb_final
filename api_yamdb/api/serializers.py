@@ -1,13 +1,12 @@
 from datetime import datetime as dt
 
+import api.exceptions as api_exceptions
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from rest_framework_simplejwt.tokens import RefreshToken
-
-import api.exceptions as ApiException
 from reviews.models import Category, Comment, Genre, Review, Title
 
 User = get_user_model()
@@ -60,7 +59,7 @@ class TokenSerializer(serializers.Serializer):
         user = get_object_or_404(User, username=data["username"])
         code = data["confirmation_code"]
         if not default_token_generator.check_token(user, code):
-            raise ApiException.ConfirmationCodeError
+            raise api_exceptions.ConfirmationCodeError
 
         refresh = RefreshToken.for_user(user)
 
@@ -73,7 +72,7 @@ class SignUpSerializer(serializers.ModelSerializer):
     def validate_username(self, value):
         """Проверка имени пользователя."""
         if value == "me":
-            raise ApiException.UserNameMeError
+            raise api_exceptions.UserNameMeError
         return value
 
     class Meta:
@@ -127,7 +126,7 @@ class TitleSerializer(serializers.ModelSerializer):
     def validate_year(self, value):
         year = dt.now()
         if not 0 < value <= year.year:
-            raise ApiException.YearValidationError
+            raise api_exceptions.YearValidationError
         return value
 
 
@@ -153,7 +152,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     def validate_score(self, value):
         if not isinstance(value, int) or not 0 < value < 11:
-            raise ApiException.ScoreValidationError
+            raise api_exceptions.ScoreValidationError
         return value
 
     def validate(self, data):
@@ -163,5 +162,5 @@ class ReviewSerializer(serializers.ModelSerializer):
             title__id=title_id, author=request.user
         ).exists()
         if exists and request.method == "POST":
-            raise ApiException.ReviewUniqueExist
+            raise api_exceptions.ReviewUniqueExist
         return data

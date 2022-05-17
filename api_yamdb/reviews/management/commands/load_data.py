@@ -29,12 +29,12 @@ class Load():
 
     def _get_model_by_name(self):
         """Получить модель по имени"""
-        Model = apps.get_model(self.app, self.model_name)
+        model = apps.get_model(self.app, self.model_name)
 
-        if not Model:
-            raise Exception('Модель %s не найдена' % (Model))
+        if not model:
+            raise Exception('Модель %s не найдена' % (model))
 
-        return Model
+        return model
 
     def _get_data_from_file_csv(self, filename):
         """Получить данные из csv файла"""
