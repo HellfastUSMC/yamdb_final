@@ -10,7 +10,8 @@ services:
 
   web:
     #build: ../api_yamdb
-    image: hellfast/api_yamdb:latest
+    #image: hellfast/api_yamdb:latest
+    image: hellfast/yamdb_final:v0.1
     #context: api_yamdb
     #dockerfile: api_yamdb/Dockerfile
     restart: always
