@@ -10,7 +10,7 @@ services:
 
   web:
     #build: ../api_yamdb
-    image: hellfast/api_yamdb:latest
+    image: hellfast/api_yamdb
     restart: always
     volumes:
       - static_value:/app/static/
