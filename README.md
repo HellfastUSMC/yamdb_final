@@ -35,7 +35,7 @@ sudo docker-compose exec web python manage.py collectstatic
 
 
 ### Загрузка данных из csv файлов
-- В папке api_yamdb/api_yamdb выполните команду:
+- В папке api_yamdb/api_yamdb выполните команду для наполнения тестовыми данными:
 ```
 python manage.py load_data
 ```
