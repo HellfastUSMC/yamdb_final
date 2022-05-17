@@ -1,4 +1,6 @@
 # YaMDb project
+### Link
+http://84.252.142.37
 ### Workflow Status
 ![yamdb_final workflow](https://github.com/HellfastUSMC/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ### Описание
