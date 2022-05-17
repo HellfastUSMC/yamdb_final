@@ -1,6 +1,6 @@
 # YaMDb project
-### CI Status
-![example workflow](https://github.com/HellfastUSMC/yamdb_final/actions/workflows/main.yml/badge.svg)
+### Workflow Status
+![yamdb_final workflow](https://github.com/HellfastUSMC/yamdb_final/actions/workflows/yamdb_final.yml/badge.svg)
 ### Описание
 Проект YaMDb собирает отзывы пользователей на различные произведения.
 ### Технологии
