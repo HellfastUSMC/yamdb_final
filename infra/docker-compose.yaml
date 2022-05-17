@@ -11,8 +11,8 @@ services:
   web:
     #build: ../api_yamdb
     image: hellfast/api_yamdb:latest
-    context: api_yamdb
-    dockerfile: api_yamdb/Dockerfile
+    #context: api_yamdb
+    #dockerfile: api_yamdb/Dockerfile
     restart: always
     volumes:
       - static_value:/app/static/
