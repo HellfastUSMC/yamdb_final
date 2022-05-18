@@ -12,11 +12,14 @@ load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY', default='12345')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 FROM_EMAIL = 'some@mail.ru'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'http://84.252.142.37/',
+    'pisswasser.servebeer.com',
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
