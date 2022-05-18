@@ -17,7 +17,7 @@ DEBUG = False
 FROM_EMAIL = 'some@mail.ru'
 
 ALLOWED_HOSTS = [
-    'http://84.252.142.37/',
+    '84.252.142.37',
     'pisswasser.servebeer.com',
 ]
 
