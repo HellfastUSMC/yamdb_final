@@ -1,6 +1,13 @@
 # YaMDb project
 ### Link
 http://84.252.142.37
+or
+http://pisswasser.servebeer.com
+### Test link to api
+- Выводит список обзоров по произведению с id 1
+```
+http://84.252.142.37/api/v1/titles/1/reviews/
+```
 ### Workflow Status
 ![yamdb_final workflow](https://github.com/HellfastUSMC/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ### Описание
