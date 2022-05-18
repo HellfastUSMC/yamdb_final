@@ -12,7 +12,7 @@ load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY', default='12345')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 FROM_EMAIL = 'some@mail.ru'
 
